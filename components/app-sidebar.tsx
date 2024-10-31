@@ -1,16 +1,16 @@
 "use client";
 
 import {
+  BookIcon,
   BookOpenText,
   ChartArea,
-  ChartNoAxesColumn,
   FileAudio,
-  GalleryVerticalEnd,
   HelpCircleIcon,
   History,
-  Mic,
+  Newspaper,
   NotebookPen,
   Podcast,
+  VideoIcon,
   Wallet,
 } from "lucide-react";
 import * as React from "react";
@@ -34,16 +34,10 @@ const data = {
     email: "burabatbold2@gmail.com",
     avatar: "/avatars/shadcn.jpg",
   },
-  teams: [
-    {
-      name: "IELTS PRE",
-      logo: GalleryVerticalEnd,
-      plan: "PREMIUM",
-    },
-  ],
+
   navMain: [
     {
-      title: "Overall",
+      title: "Dashboard",
       url: "#",
       icon: DashboardIcon,
       isActive: true,
@@ -76,6 +70,60 @@ const data = {
       ],
     },
   ],
+  courses: [
+    {
+      title: "Courses",
+      url: "/dashboard",
+      icon: BookIcon,
+      isActive: true,
+      items: [
+        {
+          title: "Course #01",
+          url: "/dashboard/course/1",
+        },
+        {
+          title: "Course #02",
+          url: "#",
+        },
+        {
+          title: "Course #03",
+          url: "#",
+        },
+        {
+          title: "Course #04",
+          url: "#",
+        },
+        {
+          title: "Course #05",
+          url: "#",
+        },
+      ],
+    },
+  ],
+  lessons: [
+    {
+      title: "Lessons",
+      url: "#",
+      icon: VideoIcon,
+      items: [
+        {
+          title: "Video #01",
+          url: "#",
+        },
+        {
+          title: "Video #02",
+          url: "#",
+        },
+      ],
+    },
+  ],
+  news: [
+    {
+      name: "News",
+      url: "#",
+      icon: Newspaper,
+    },
+  ],
   projects: [
     {
       name: "Wallet",
@@ -99,10 +147,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        <TeamSwitcher />
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
+        <NavMain title="Dashboard" items={data.navMain} />
+        <NavMain title="Course" items={data.courses} />
+        <NavMain title="Lesson" items={data.lessons} />
+        <NavProjects projects={data.news} />
         <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
