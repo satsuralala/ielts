@@ -1,0 +1,17 @@
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  script:
+    - docker login -u "${REGISTRY_FIBO_USERNAME}" -p "${REGISTRY_FIBO_PASSWORD}" registry.fibo.cloud
+    - docker build --cache-from registry.fibo.cloud/ielts/web -t registry.fibo.cloud/ielts/web .
+    - docker push registry.fibo.cloud/ielts/web
+    # Stop and remove existing container only if running
+    - docker ps --quiet --filter="name=web" | xargs --no-run-if-empty docker rm -f
+    # Run container in detached mode
+    - docker run -d --name web -p 3000:80 --restart always registry.fibo.cloud/ielts/web
+    # Clean up unused images only when necessary
+    - docker image prune -f --filter "until=24h"
+  tags:
+    - ielts-runner
