@@ -6,7 +6,7 @@ deploy:
   script:
     - cp $ENV "$(pwd)/.env"
     - docker login -u "${REGISTRY_FIBO_USERNAME}" -p "${REGISTRY_FIBO_PASSWORD}" registry.fibo.cloud
-    - docker build --build-arg NEXT_PUBLIC_SERVICE_URL="https://api.ieltsprep.mn/api/v1" --cache-from registry.fibo.cloud/ielts/web -t registry.fibo.cloud/ielts/web .
+    - docker build --build-arg NEXT_PUBLIC_SERVICE_URL="https://api.ieltsprep.mn/api/v1"  -t registry.fibo.cloud/ielts/web .
     - docker push registry.fibo.cloud/ielts/web
     # Stop and remove existing container only if running
     - docker ps --quiet --filter="name=web" | xargs --no-run-if-empty docker rm -f
