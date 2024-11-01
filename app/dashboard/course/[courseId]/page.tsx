@@ -5,7 +5,7 @@ import CourseClient from "./_components";
 
 interface PageProps {
   params: {
-    courseId: any;
+    courseId: string;
   };
 }
 
@@ -22,6 +22,7 @@ async function CourseIdPage({ params }: PageProps) {
     redirect("/dashboard/course/1");
   }
 
+  console.log(typeof courseId, "dddddd");
   const sampleData = [
     { date: "2020-10-23", listen: 10, reading: 20, writing: 30, speaking: 40 },
     { date: "2020-10-24", listen: 15, reading: 25, writing: 35, speaking: 45 },
