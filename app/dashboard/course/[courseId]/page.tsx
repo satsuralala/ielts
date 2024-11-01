@@ -5,7 +5,7 @@ import CourseClient from "./_components";
 
 interface PageProps {
   params: {
-    courseId: string;
+    courseId: any;
   };
 }
 
