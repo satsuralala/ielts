@@ -5,13 +5,13 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
 } from "@/components/ui/breadcrumb";
-import { Separator } from "@/components/ui/separator";
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { auth } from "@/integration/auth-handler";
+import { Separator } from "@radix-ui/react-separator";
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 
@@ -26,9 +26,12 @@ export default async function DashboardLayout({
   children: React.ReactNode;
 }>) {
   const session = await auth();
+
   if (!session?.user) {
     redirect("/auth/login");
   }
+
+  console.log(session, "sesss");
 
   return (
     <SidebarProvider>
@@ -43,10 +46,6 @@ export default async function DashboardLayout({
                 <BreadcrumbItem className="hidden md:block">
                   <BreadcrumbLink href="#">Dashboard</BreadcrumbLink>
                 </BreadcrumbItem>
-                {/* <BreadcrumbSeparator className="hidden md:block" />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>Result</BreadcrumbPage>
-                </BreadcrumbItem> */}
               </BreadcrumbList>
             </Breadcrumb>
           </div>
@@ -54,12 +53,12 @@ export default async function DashboardLayout({
 
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           {children}
-          <div className="grid auto-rows-min gap-4 md:grid-cols-3">
+          {/* <div className="grid auto-rows-min gap-4 md:grid-cols-3">
             <div className="aspect-video rounded-xl bg-zinc-100/50 dark:bg-zinc-800/50" />
             <div className="aspect-video rounded-xl bg-zinc-100/50 dark:bg-zinc-800/50" />
             <div className="aspect-video rounded-xl bg-zinc-100/50 dark:bg-zinc-800/50" />
           </div>
-          <div className="min-h-[100vh] flex-1 rounded-xl bg-zinc-100/50 md:min-h-min dark:bg-zinc-800/50" />
+          <div className="min-h-[100vh] flex-1 rounded-xl bg-zinc-100/50 md:min-h-min dark:bg-zinc-800/50" /> */}
         </div>
       </SidebarInset>
     </SidebarProvider>

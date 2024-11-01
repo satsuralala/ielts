@@ -12,13 +12,12 @@ import { Input } from "@/components/ui/input";
 import { AuthService } from "@/integration/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRequest } from "ahooks";
+import { signIn } from "next-auth/react";
+import { redirect } from "next/navigation";
 import { useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import * as z from "zod";
-import { SignIn } from "../signin";
-import { signIn } from "next-auth/react";
-import { redirect } from "next/navigation";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Enter a valid email address" }),
@@ -60,7 +59,7 @@ export const SignUpForm = () => {
         return;
       }
       toast.success("Registered successfully!");
-      redirect("/dashboard");
+      redirect("/dashboard/overall");
     });
   };
 

@@ -18,7 +18,6 @@ import * as React from "react";
 import { NavMain } from "@/components/nav-main";
 import { NavProjects } from "@/components/nav-projects";
 import { NavUser } from "@/components/nav-user";
-import { TeamSwitcher } from "@/components/team-switcher";
 import {
   Sidebar,
   SidebarContent,
@@ -27,6 +26,7 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 import { DashboardIcon } from "@radix-ui/react-icons";
+import { TeamSwitcher } from "./team-switcher";
 
 const data = {
   user: {
@@ -44,27 +44,27 @@ const data = {
       items: [
         {
           title: "Result",
-          url: "#",
+          url: "/dashboard/overall",
           icon: ChartArea,
         },
         {
           title: "Writing",
-          url: "#",
+          url: "/dashboard/overall/writing",
           icon: NotebookPen,
         },
         {
           title: "Listening",
-          url: "#",
+          url: "/dashboard/overall/listening",
           icon: FileAudio,
         },
         {
           title: "Reading",
-          url: "#",
+          url: "/dashboard/overall/reading",
           icon: BookOpenText,
         },
         {
           title: "Speaking",
-          url: "#",
+          url: "/dashboard/overall/speaking",
           icon: Podcast,
         },
       ],
@@ -80,22 +80,31 @@ const data = {
         {
           title: "Course #01",
           url: "/dashboard/course/1",
+          disabled: false,
         },
         {
           title: "Course #02",
-          url: "#",
+          url: "/dashboard/course/2",
+          disabled: true,
+          lockMessage: "Complete Course #01 to unlock",
         },
         {
           title: "Course #03",
-          url: "#",
+          url: "/dashboard/course/3",
+          disabled: true,
+          lockMessage: "Complete Course #02 to unlock",
         },
         {
           title: "Course #04",
-          url: "#",
+          url: "/dashboard/course/4",
+          disabled: true,
+          lockMessage: "Complete Course #03 to unlock",
         },
         {
           title: "Course #05",
-          url: "#",
+          url: "/dashboard/course/5",
+          disabled: true,
+          lockMessage: "Complete Course #04 to unlock",
         },
       ],
     },
@@ -108,11 +117,11 @@ const data = {
       items: [
         {
           title: "Video #01",
-          url: "#",
+          url: "/dashboard/lesson/1",
         },
         {
           title: "Video #02",
-          url: "#",
+          url: "/dashboard/lesson/2",
         },
       ],
     },
@@ -127,17 +136,17 @@ const data = {
   projects: [
     {
       name: "Wallet",
-      url: "#",
+      url: "/dashboard/wallet",
       icon: Wallet,
     },
     {
       name: "Plan History",
-      url: "#",
+      url: "/dashboard/plan-history",
       icon: History,
     },
     {
       name: "Help & Support",
-      url: "#",
+      url: "/dashboard/help-support",
       icon: HelpCircleIcon,
     },
   ],

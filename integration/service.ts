@@ -1,4 +1,3 @@
-import { BaseResponse } from "@/models/base";
 import axios from "axios";
 
 export const SERVICE_URL = process.env.NEXT_PUBLIC_SERVICE_URL;

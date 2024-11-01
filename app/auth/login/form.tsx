@@ -47,7 +47,7 @@ export const LoginForm = () => {
       }
 
       toast.success("Logged in successfully");
-      redirect("/dashboard");
+      redirect("/dashboard/overall");
     });
   };
 

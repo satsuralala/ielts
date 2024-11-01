@@ -12,7 +12,7 @@ export function TeamSwitcher() {
   return (
     <SidebarMenu>
       <SidebarMenuItem>
-        <Link href={"/dashboard"}>
+        <Link href={"/dashboard/overall"}>
           <SidebarMenuButton
             size="lg"
             className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
