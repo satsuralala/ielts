@@ -16,7 +16,7 @@ import React, { useState } from "react";
 import { toast } from "sonner";
 
 interface CellActionProps {
-  data: never;
+  data: any;
 }
 
 const CellAction: React.FC<CellActionProps> = ({ data }) => {
@@ -34,7 +34,7 @@ const CellAction: React.FC<CellActionProps> = ({ data }) => {
   const onDelete = async () => {
     try {
       setLoading(true);
-      await axios.delete(`/api/${params.storeId}/products/${data.id}`);
+      await axios.delete(`/api/${params.storeId}/products/${data.id as any}`);
       router.refresh();
       toast.success("Product deleted");
     } catch {

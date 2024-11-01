@@ -31,7 +31,7 @@ async function CourseIdPage({ params }: PageProps) {
   return (
     <div className="flex-col">
       <div className="flex-1 space-y-4 p-8 pt-6">
-        <CourseClient data={sampleData} />
+        <CourseClient data={sampleData as any} />
       </div>
     </div>
   );

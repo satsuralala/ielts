@@ -26,15 +26,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <SessionConfig>
-        <html lang="en">
-          <body className={` ${geistMono.className} antialiased`}>
-            {children}
-          </body>
+    <SessionConfig>
+      <html lang="en">
+        <body className={` ${geistMono.className} antialiased`}>
           <Toaster position="top-center" />
-        </html>
-      </SessionConfig>
-    </>
+          {children}
+        </body>
+      </html>
+    </SessionConfig>
   );
 }

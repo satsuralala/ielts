@@ -77,12 +77,12 @@ export function NavMain({
                           <TooltipProvider>
                             <Tooltip>
                               <TooltipTrigger asChild>
-                                <span className="flex items-center gap-2 w-full cursor-pointer hover:bg-accent  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ">
+                                <span className="flex items-center gap-2 w-full cursor-not-allowed opacity-50 hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                                  <Lock className="h-3 w-3 text-muted-foreground" />
                                   {subItem.icon && <subItem.icon />}
                                   <span className="text-base">
                                     {subItem.title}
                                   </span>
-                                  <Lock className="h-3 w-3 text-muted-foreground" />
                                 </span>
                               </TooltipTrigger>
                               <TooltipContent>
@@ -93,7 +93,7 @@ export function NavMain({
                         ) : (
                           <a
                             href={subItem.url}
-                            className="flex items-center gap-2 w-full"
+                            className="flex items-center gap-2 w-full ml-3"
                           >
                             {subItem.icon && <subItem.icon />}
                             <span className="text-base">{subItem.title}</span>

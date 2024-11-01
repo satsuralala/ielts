@@ -22,18 +22,26 @@ const CourseClient: React.FC<CourseClientProps> = ({ data }) => {
   return (
     <>
       <div className="flex items-center justify-between">
-        <Link href="/exam.IELTSprep.mn">
+        <Link
+          href="https://exam.ieltsprep.mn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Button>
             <Plus className="mr-2 h-4 w-4" />
-            Take the exam
+            Take test
           </Button>
         </Link>
+
         <Heading
           title={`username : ${user?.customer.email || ""}`}
           password={`${user?.customer.moodle_pwd || ""}`}
         />
       </div>
       <Separator />
+      <div className="flex flex-col gap-2">
+        <h2 className="text-3xl font-bold tracking-tight">{"Attempts: 3"}</h2>
+      </div>
       <DataTable columns={columns} data={data} />
     </>
   );
