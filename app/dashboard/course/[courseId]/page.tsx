@@ -3,26 +3,20 @@ import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import CourseClient from "./_components";
 
-type Props = {
-  params: { courseId: string }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
+type Params = Promise<{ courseId: string }>;
 
 export const metadata: Metadata = {
-  title: 'Course Details',
-}
+  title: "Course Details",
+};
 
-async function CourseIdPage({
-  params,
-  searchParams,
-}: Props) {
+async function CourseIdPage({ params }: { params: Params }) {
   const session = await auth();
 
   if (!session?.user?.id) {
     redirect("/auth/login");
   }
 
-  const { courseId } = params;
+  const { courseId } = await params;
 
   if (courseId !== "1") {
     redirect("/dashboard/course/1");
@@ -37,7 +31,7 @@ async function CourseIdPage({
   return (
     <div className="flex-col">
       <div className="flex-1 space-y-4 p-8 pt-6">
-        <CourseClient data={sampleData} />
+        <CourseClient data={sampleData as any} />
       </div>
     </div>
   );
