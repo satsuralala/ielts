@@ -1,14 +1,21 @@
 import { auth } from "@/integration/auth-handler";
+import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import CourseClient from "./_components";
 
-interface PageProps {
-  params: {
-    courseId: string;
-  };
+type Props = {
+  params: { courseId: string }
+  searchParams: { [key: string]: string | string[] | undefined }
 }
 
-async function CourseIdPage({ params }: PageProps) {
+export const metadata: Metadata = {
+  title: 'Course Details',
+}
+
+async function CourseIdPage({
+  params,
+  searchParams,
+}: Props) {
   const session = await auth();
 
   if (!session?.user?.id) {
@@ -30,7 +37,7 @@ async function CourseIdPage({ params }: PageProps) {
   return (
     <div className="flex-col">
       <div className="flex-1 space-y-4 p-8 pt-6">
-        <CourseClient data={sampleData as any} />
+        <CourseClient data={sampleData} />
       </div>
     </div>
   );
