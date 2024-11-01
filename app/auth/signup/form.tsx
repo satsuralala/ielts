@@ -44,7 +44,10 @@ export const SignUpForm = () => {
 
   const onSubmit = async (data: UserFormValue) => {
     startTransition(async () => {
-      const result = await runAsync(data.email, data.password);
+      const result = await runAsync({
+        email: data.email,
+        password: data.password,
+      });
       if (!result.data) {
         toast.error("Could not sign up");
         return;

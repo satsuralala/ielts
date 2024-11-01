@@ -9,7 +9,6 @@ interface SignUpParams {
 interface LoginParams {
   email: string;
   password: string;
-  redirectTo?: string;
 }
 
 export const AuthService = {
@@ -25,11 +24,7 @@ export const AuthService = {
     }
   },
 
-  login: async ({
-    email,
-    password,
-    redirectTo = "/dashboard",
-  }: LoginParams) => {
+  login: async ({ email, password }: LoginParams) => {
     try {
       const response = await signIn("credentials", {
         email,
