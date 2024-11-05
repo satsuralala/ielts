@@ -28,6 +28,7 @@ export const LoginForm = () => {
   const [loading, startTransition] = useTransition();
   const defaultValues = {
     email: "demo@gmail.com",
+    password: "",
   };
   const form = useForm<UserFormValue>({
     resolver: zodResolver(formSchema),

@@ -5,15 +5,13 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { AuthService } from "@/integration/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRequest } from "ahooks";
-import { signIn } from "next-auth/react";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -31,38 +29,43 @@ const defaultValues = {
 };
 
 export const SignUpForm = () => {
+  const router = useRouter();
   const { runAsync } = useRequest(AuthService.signUp, {
     manual: true,
+    onError: (error) => {
+      toast.error(error.message || "Something went wrong");
+    },
   });
 
   const [loading, startTransition] = useTransition();
 
   const form = useForm<UserFormValue>({
     resolver: zodResolver(formSchema),
-    defaultValues,
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+    mode: "onChange",
   });
 
   const onSubmit = async (data: UserFormValue) => {
     startTransition(async () => {
-      const result = await runAsync({
-        email: data.email,
-        password: data.password,
-      });
-      if (!result.data) {
-        toast.error("Could not sign up");
-        return;
-      }
+      try {
+        const result = await runAsync({
+          email: data.email,
+          password: data.password,
+        });
 
-      const loginResult = await signIn("credentials", {
-        ...data,
-        redirect: false,
-      });
-      if (loginResult?.error) {
-        toast.error("Email or password is incorrect");
-        return;
+        if (result?.body) {
+          toast.success("Sign up successful");
+          router.push("/auth/login");
+        }
+
+        // toast.success("Signed in successfully");
+        // router.push("/dashboard");
+      } catch (error) {
+        toast.error("Something went wrong");
       }
-      toast.success("Registered successfully!");
-      redirect("/dashboard/overall");
     });
   };
 
@@ -76,15 +79,14 @@ export const SignUpForm = () => {
           <FormField
             control={form.control}
             name="email"
-            render={({ field }) => (
+            render={({ field: { value = "", ...fieldProps } }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
                 <FormControl>
                   <Input
+                    placeholder="Email"
                     type="email"
-                    placeholder="Enter your email..."
-                    disabled={loading}
-                    {...field}
+                    value={value}
+                    {...fieldProps}
                   />
                 </FormControl>
                 <FormMessage />
@@ -94,15 +96,14 @@ export const SignUpForm = () => {
           <FormField
             control={form.control}
             name="password"
-            render={({ field }) => (
+            render={({ field: { value = "", ...fieldProps } }) => (
               <FormItem>
-                <FormLabel>Password</FormLabel>
                 <FormControl>
                   <Input
                     type="password"
-                    placeholder="Enter your password..."
-                    disabled={loading}
-                    {...field}
+                    placeholder="Password"
+                    value={value}
+                    {...fieldProps}
                   />
                 </FormControl>
                 <FormMessage />
@@ -120,7 +121,7 @@ export const SignUpForm = () => {
           </Button>
         </form>
       </Form>
-      <div className="relative">
+      {/* <div className="relative">
         <div className="absolute inset-0 flex items-center">
           <span className="w-full border-t" />
         </div>
@@ -129,7 +130,7 @@ export const SignUpForm = () => {
             Or continue with
           </span>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
