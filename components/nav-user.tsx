@@ -107,6 +107,7 @@ export function NavUser({
             <DropdownMenuSeparator />
             <DropdownMenuItem
               onClick={async () => {
+                "use server";
                 await signOut({
                   redirect: true,
                 });
