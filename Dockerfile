@@ -53,6 +53,8 @@ ENV PORT 3000
 ENV HOSTNAME "0.0.0.0"
 ENV NEXT_PUBLIC_SERVICE_URL "https://api.ieltsprep.mn/api/v1"
 ENV NEXTAUTH_SECRET "Y+YiEkqxF9io8Zop6I/TftcHnBozLSDaNLLb41/wfVs="
+ENV NEXTAUTH_URL="https://ieltsprep.mn"
+
 
 # Expose port
 EXPOSE 3000
