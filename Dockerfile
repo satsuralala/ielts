@@ -60,7 +60,7 @@ EXPOSE 3000
 
 ENV PORT=3000
 ENV NEXT_PUBLIC_SERVICE_URL="https://api.ieltsprep.mn/api/v1"
-ENV AUTH_SECRET="Y+YiEkqxF9io8Zop6I/TftcHnBozLSDaNLLb41/wfVs="
+ENV NEXTAUTH_SECRET="Y+YiEkqxF9io8Zop6I/TftcHnBozLSDaNLLb41/wfVs="
 
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
