@@ -109,7 +109,6 @@ export function NavUser({
               onClick={() => {
                 window.location.href = "/auth/login";
                 signOut({ redirect: false });
-                <LogOut />;
               }}
             >
               <LogOut />
