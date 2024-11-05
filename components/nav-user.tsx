@@ -109,7 +109,6 @@ export function NavUser({
               onClick={async () => {
                 await signOut({
                   redirect: true,
-                  callbackUrl: "/auth/login",
                 });
               }}
             >
