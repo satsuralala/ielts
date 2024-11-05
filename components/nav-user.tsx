@@ -108,7 +108,7 @@ export function NavUser({
             <DropdownMenuItem
               onClick={async () => {
                 await signOut({
-                  redirect: true,
+                  redirectTo: "/auth/login",
                 });
               }}
             >
