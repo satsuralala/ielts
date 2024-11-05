@@ -25,6 +25,15 @@ export const AuthService = {
     }
   },
 
+  signOut: async () => {
+    try {
+      const response = await apiClient.post("/auth/signout");
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  },
+
   login: async ({ email, password }: LoginParams) => {
     try {
       const response = await signIn("credentials", {
