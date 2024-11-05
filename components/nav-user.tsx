@@ -107,9 +107,7 @@ export function NavUser({
             <DropdownMenuSeparator />
             <DropdownMenuItem
               onClick={async () => {
-                await signOut({
-                  redirectTo: "https://ieltsprep.mn/auth/login",
-                });
+                await signOut({});
               }}
             >
               <LogOut />
