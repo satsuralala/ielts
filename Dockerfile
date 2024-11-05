@@ -49,8 +49,8 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 USER nextjs
 
 # Set environment variables
-ENV PORT 3000
-ENV HOSTNAME "https://ieltsprep.mn/"
+# ENV PORT 3000
+# ENV HOSTNAME "https://ieltsprep.mn/"
 ENV NEXT_PUBLIC_SERVICE_URL "https://api.ieltsprep.mn/api/v1"
 ENV NEXTAUTH_SECRET "Y+YiEkqxF9io8Zop6I/TftcHnBozLSDaNLLb41/wfVs="
 
