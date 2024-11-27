@@ -1,7 +1,7 @@
-import { Metadata } from "next";
-import { LoginForm } from "./form";
 import { Button } from "@/components/ui/button";
+import { Metadata } from "next";
 import Link from "next/link";
+import { LoginForm } from "./form";
 
 export const metadata: Metadata = {
   title: "Login - Marshall Language School",

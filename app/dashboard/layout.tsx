@@ -28,10 +28,8 @@ export default async function DashboardLayout({
   const session = await auth();
 
   if (!session?.user) {
-    redirect("/auth/login");
+    redirect("/landing");
   }
-
-  console.log(session, "sesss");
 
   return (
     <SidebarProvider>
