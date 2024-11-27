@@ -20,7 +20,7 @@ export default function HeaderMenu() {
             <Image
               src="/logo.jpg"
               alt="Logo"
-              width={50}
+              width={40}
               height={40}
               className="ml-4 object-contain"
             />
@@ -69,7 +69,7 @@ export default function HeaderMenu() {
             <Image
               src="/logo.jpg"
               alt="Logo"
-              width={50}
+              width={40}
               height={40}
               className="ml-4 object-contain"
             />
