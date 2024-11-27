@@ -18,22 +18,22 @@ export default function HeaderMenu() {
         <div className="flex items-center gap-2.5">
           <Link href="/">
             <Image
-              src="/images/logo.png"
+              src="/logo.jpg"
               alt="Logo"
               width={50}
-              height={50}
+              height={40}
               className="ml-4 object-contain"
             />
           </Link>
           <div className="flex items-center gap-4">
             {MENU_ITEMS.map((item, index) => (
-              <Link
-                className="px-2.5 py-1.5 text-[14px] text-lime-400 hover:rounded-[16px] hover:bg-gray-100 hover:text-gray-900 transition-all duration-200"
-                href={item.href}
+              <div
+                className="px-2.5 py-1.5 text-[14px] text-lime-400 hover:rounded-[16px] hover:bg-gray-100 hover:text-gray-900 transition-all duration-200 cursor-pointer"
+                // href={item.href}
                 key={index}
               >
                 {item.label}
-              </Link>
+              </div>
             ))}
           </div>
         </div>

@@ -28,7 +28,7 @@ export default async function DashboardLayout({
   const session = await auth();
 
   if (!session?.user) {
-    redirect("/landing");
+    redirect("/");
   }
 
   return (

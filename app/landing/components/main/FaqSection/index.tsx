@@ -18,7 +18,7 @@ export const FaqSection: FC = () => {
         <Accordion type="single" collapsible className="space-y-8">
           {FAQ_QUESTIONS.map((faq, indexas) => (
             <div
-              key={indexas}
+              key={faq.question}
               className="flex justify-between px-4 py-2 bg-gray-100 rounded-3xl group hover:bg-gray-300 duration-200 ease-in-out "
             >
               <AccordionItem value={faq.question} className="flex-1">

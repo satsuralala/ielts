@@ -29,7 +29,7 @@ export const ReviewSection: FC = () => {
       <div className="w-[200px] h-[2px] bg-gray-300"></div>
       <div className="w-full aspect-[2] rounded-xl relative">
         <video
-          src="https://www.pexels.com/download/video/2795164/"
+          src="/video-discuss.mp4"
           autoPlay
           loop
           muted
