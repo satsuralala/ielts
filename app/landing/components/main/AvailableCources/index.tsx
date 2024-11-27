@@ -9,17 +9,16 @@ export default function AvailableCoursesSection() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <Suspense fallback={<div>Loading feed...</div>}>
           {COURSES.map((course, index) => (
-            <div key={"coursesGrid" + index}>
-              <DesignCard
-                title={course.title}
-                instructor={course.instructor}
-                startDate={course.startDate}
-                endDate={course.endDate}
-                price={course.price}
-                image={course.image}
-                profile={course.profile}
-              />
-            </div>
+            <DesignCard
+              key={"coursesGrid" + index}
+              title={course.title}
+              instructor={course.instructor}
+              startDate={course.startDate}
+              endDate={course.endDate}
+              price={course.price}
+              image={course.image}
+              profile={course.profile}
+            />
           ))}
         </Suspense>
       </div>

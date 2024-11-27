@@ -25,7 +25,7 @@ const DesignCard: FC<DesignCardProps> = ({
 
   return (
     <div
-      className={`box-border overflow-hidden bg-white border border-[#D0D5DD] rounded-[24px] flex flex-col items-start p-[2px] transition-all duration-500 w-[355px] ${
+      className={`box-border overflow-hidden bg-white border border-[#D0D5DD] rounded-[24px] flex flex-col items-start p-[2px] transition-all duration-500 max-w-[355px] ${
         isHovered ? "hover:bg-[#3F2BFF] hover:text-white" : ""
       }`}
       onMouseEnter={() => setIsHovered(true)}
@@ -40,7 +40,7 @@ const DesignCard: FC<DesignCardProps> = ({
           className="object-cover rounded-[23px] "
         />
       </div>
-      <div className="flex flex-col items-start p-[30px] gap-[22px]  flex-none order-1 self-stretch">
+      <div className="flex flex-col items-start pr-4 pl-[30px] pb-[30px] pt-[30px] gap-[22px]  flex-none order-1 self-stretch">
         <div className="flex flex-col items-start p-0 gap-[4px] flex-none order-0">
           <p
             className={`font-bold text-[14px] leading-[21px] flex items-center ${

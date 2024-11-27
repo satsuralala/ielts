@@ -67,10 +67,10 @@ export default function HeaderMenu() {
           />
           <Link href="/">
             <Image
-              src="/images/logo.png"
+              src="/logo.jpg"
               alt="Logo"
               width={50}
-              height={50}
+              height={40}
               className="ml-4 object-contain"
             />
           </Link>
