@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
 export default function HomePage() {
-  redirect("/auth/login");
+  redirect("/landing");
   return <div>Loading...</div>;
 }
