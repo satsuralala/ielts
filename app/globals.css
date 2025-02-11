@@ -35,3 +35,13 @@ body {
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
+
+
+.bricolage-grotesque{
+    font-family: "Bricolage Grotesque", serif !important;
+    font-optical-sizing: auto !important;
+    font-weight: 600 !important;
+    font-style: normal !important;
+    font-variation-settings: "wdth" 100 !important; 
+}
+

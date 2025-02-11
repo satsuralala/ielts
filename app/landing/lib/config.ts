@@ -4,20 +4,16 @@ export const MENU_ITEMS = [
     href: "/",
   },
   {
-    label: "Course Filter",
-    href: "/course-filter",
+    label: "IELTS Exam Library",
+    href: "/iELTS Exam Library",
   },
   {
-    label: "Document",
-    href: "/document",
+    label: "Live Lessons",
+    href: "/live Lessons",
   },
   {
-    label: "Server",
-    href: "/server",
-  },
-  {
-    label: "Moodle Themes",
-    href: "/moodle-themes",
+    label: "Teachers",
+    href: "/teachers",
   },
 ];
 export const REVIEWS = [
@@ -177,5 +173,51 @@ export const FAQ_QUESTIONS = [
   {
     question: "Does this theme support IOMAD?",
     answer: "Yes, the theme license is lifetime.",
+  },
+];
+
+export const PRICES = [
+  {
+    title: "Learner",
+    price: 200000,
+    points: 200,
+    features: [
+      "200 Speaking test",
+      "200 Listening test",
+      "200 Reading test",
+      "200 Writting test",
+      "Please calculate my AI score 3 times.",
+      "Please have the teacher calculate my score 3 times.",
+    ],
+
+    color: "#3F2BFF",
+  },
+  {
+    title: "Standart",
+    color: "#F79009",
+    price: 400000,
+    points: 200,
+    features: [
+      "200 Speaking test",
+      "200 Listening test",
+      "200 Reading test",
+      "200 Writting test",
+      "Please calculate my AI score 3 times.",
+      "Please have the teacher calculate my score 3 times.",
+    ],
+  },
+  {
+    title: "Premier",
+    color: "#12B76A",
+    price: 600000,
+    points: 200,
+    features: [
+      "200 Speaking test",
+      "200 Listening test",
+      "200 Reading test",
+      "200 Writting test",
+      "Please calculate my AI score 3 times.",
+      "Please have the teacher calculate my score 3 times.",
+    ],
   },
 ];

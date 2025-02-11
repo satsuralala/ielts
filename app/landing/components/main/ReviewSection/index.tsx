@@ -4,7 +4,7 @@ import Marquee from "react-fast-marquee";
 
 export const ReviewSection: FC = () => {
   return (
-    <div className="container mx-auto flex flex-col items-center gap-16 py-20">
+    <div className="container mx-auto flex flex-col items-center gap-16 py-20 px-5 sm:px-0">
       <div className="overflow-hidden w-full">
         <Marquee
           direction="right"

@@ -45,20 +45,20 @@ const DesignCard: FC<DesignCardProps> = ({
           <p
             className={`font-bold text-[14px] leading-[21px] flex items-center ${
               isHovered ? "text-[#ffffff]" : "text-[#707070]"
-            } w-full`}
+            } w-full font-sans`}
           >
             Moodle Tutorials
           </p>
           <h3
             className={`font-bold text-[20px] leading-[26px] flex items-center ${
               isHovered ? "text-[#ffffff]" : "text-[#212121]"
-            } w-[250px]`}
+            } w-[250px] bricolage-grotesque `}
           >
             {title}
           </h3>
         </div>
         <div className="flex flex-col items-start p-0 gap-[20px]  flex-none order-1 self-stretch">
-          <div className="relative w-[121.16px] h-[30px] flex-none order-0">
+          <div className="relative w-[121.16px] h-[30px] flex  order-0">
             <Image
               src={profile} // Use the Image component
               alt={instructor}
@@ -67,7 +67,7 @@ const DesignCard: FC<DesignCardProps> = ({
               className="absolute left-0 top-[calc(50%-15px)] rounded-[192px]"
             />
             <p
-              className={`absolute w-[83.41px] h-[21px] left-[39.45px] top-[3.73px] font-medium text-[12px] leading-[21px] flex items-center ${
+              className={`absolute w-[100.41px] h-[21px] left-[39.45px] top-[3.73px] font-medium text-[12px] leading-[21px] flex items-center ${
                 isHovered ? "text-[#ffffff]" : "text-[#212121]"
               }`}
             >
@@ -77,14 +77,14 @@ const DesignCard: FC<DesignCardProps> = ({
           <div className="flex flex-col items-start p-0 gap-3 flex-none order-1 self-stretch w-full">
             <div className="flex flex-row items-center p-0 gap-[3px]">
               <p
-                className={`font-bold text-[12px] leading-[21px] flex items-center ${
+                className={`font-sans font-bold text-[12px] leading-[21px] flex items-center ${
                   isHovered ? "text-[#ffffff]" : "text-[#434343]"
                 }`}
               >
                 Course start date:
               </p>
               <p
-                className={`font-normal text-[12px] leading-[21px] flex items-center ${
+                className={`font-sans font-normal text-[12px] leading-[21px] flex items-center ${
                   isHovered ? "text-[#ffffff]" : "text-[#434343]"
                 }`}
               >
@@ -93,14 +93,14 @@ const DesignCard: FC<DesignCardProps> = ({
             </div>
             <div className="flex flex-row items-center p-0 gap-[3px] ">
               <p
-                className={`font-bold text-[12px] leading-[21px] flex items-center ${
+                className={`font-sans font-bold text-[12px] leading-[21px] flex items-center ${
                   isHovered ? "text-[#ffffff]" : "text-[#434343]"
                 }`}
               >
                 Course end date:
               </p>
               <p
-                className={`font-normal text-[12px] leading-[21px] flex items-center ${
+                className={`font-sans font-normal text-[12px] leading-[21px] flex items-center ${
                   isHovered ? "text-[#ffffff]" : "text-[#434343]"
                 }`}
               >

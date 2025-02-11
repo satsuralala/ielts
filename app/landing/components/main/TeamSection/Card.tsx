@@ -27,7 +27,7 @@ export const TeamMemberCard = ({
 
       {/* Content Section */}
       <div className="absolute bottom-5 left-6 right-6 rounded-lg bg-[#ffffff40] p-6 sm:p-4 md:p-5 backdrop-blur-sm">
-        <h3 className="text-lg font-semibold text-white-a700">{userName}</h3>
+        <h3 className=" bricolage-grotesque text-lg font-semibold text-white-a700">{userName}</h3>
         <p className="text-sm  text-white-a700">{userTitle}</p>
         <div className="mt-3 space-y-2">
           {userDescription.map((desc, i) => (

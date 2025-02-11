@@ -9,13 +9,13 @@ import {
 import { FC } from "react";
 export const FaqSection: FC = () => {
   return (
-    <section className="container py-20 flex flex-col items-center gap-8">
-      <h1 className="text-5xl font-bold">FAQ</h1>
-      <p className="text-xl">
+    <section className="container py-20 md:py-44 flex flex-col items-center gap-8">
+      <h1 className="bricolage-grotesque text-5xl font-bold">FAQ</h1>
+      <p className="font-sans text-xl">
         List of the most common questions about a premium Alpha Moodle theme.
       </p>
       <div className="flex flex-col items-stretch w-full mx-32 gap-4 ">
-        <Accordion type="single" collapsible className="space-y-8">
+        <Accordion type="single" collapsible className="space-y-8 mx-auto w-full  max-w-[860px] ">
           {FAQ_QUESTIONS.map((faq, indexas) => (
             <div
               key={faq.question}
