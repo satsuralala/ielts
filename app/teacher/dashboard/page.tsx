@@ -6,7 +6,6 @@ const Dashboard = () => {
   return (
     <div className="mt-[136px] w-[95%] md:w-[90%] mx-auto container flex md:gap-14">
       <Sidebar />
-
       <div className="pt-16 flex flex-col gap-8 rounded-xl">
         <p className="text-[#1D2939] font-medium text-3xl">My Dashboard</p>
         {/* table1 */}
