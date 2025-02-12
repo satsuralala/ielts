@@ -34,7 +34,7 @@ export default function LoginDialog() {
           />
         </button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[581px] max-w-[500px] p-0 rounded-3xl block">
+      <DialogContent className="sm:max-w-[581px] max-w-[500px] overflow-y-scroll p-0 rounded-3xl block">
         <DialogHeader className="relative py-16 rounded-t-3xl bg-[#3F2BFF] opacity-90 bg-[radial-gradient(rgba(255,255,255,0.1)_25%,transparent_25%)] [background-size:18px_18px] flex items-center flex-col justify-center">
           <DialogTitle className="flex items-center flex-col justify-center">
             <Image

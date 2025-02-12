@@ -13,7 +13,7 @@ export default function HeaderMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
  
   return (
-    <header className="left-0 right-0 top-7 overflow-hidden w-[95%] md:w-[90%] mx-auto rounded-2xl shadow-xs bg-indigo-a700 backdrop-blur-md container fixed px-4 py-2 z-20">
+    <header className="left-0 right-0 mt-7 overflow-hidden w-[95%] md:w-[90%] mx-auto rounded-2xl shadow-xs bg-indigo-a700 backdrop-blur-md container fixed px-4 py-2 z-20">
       {/* Desktop Menu */}
       <div className="md:flex items-center justify-between hidden">
         <div className="flex items-center gap-2.5 shrink-0">
@@ -70,6 +70,7 @@ export default function HeaderMenu() {
           </Link>
         </div>
         <div className="flex gap-1">
+
           <RegisterDialog/>
           <LoginDialog/>
         </div>

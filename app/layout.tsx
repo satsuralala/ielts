@@ -3,6 +3,9 @@ import { SessionConfig } from "@/config/provider";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../app/globals.css";
+import { Footer } from "./landing/components/main/Footer";
+import HeaderMenu from "./landing/components/main/Header_menu";
+import "./landing.css";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -85,8 +88,14 @@ export default function RootLayout({
           <link rel="manifest" href="/site.webmanifest" />
         </head>
         <body className={`${geistMono.className} antialiased`}>
+          <div className="w-full overflow-hidden bg-white-a700">
+            <HeaderMenu />
+            
+              {children}
+            
           <Toaster position="top-center" />
-          {children}
+            <Footer />
+          </div>
         </body>
       </html>
     </SessionConfig>
